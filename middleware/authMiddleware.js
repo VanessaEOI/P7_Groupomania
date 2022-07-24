@@ -30,6 +30,7 @@ exports.requireAuth = (req, res, next) => {
     jwt.verify(token, process.env.TOKEN_SECRET, async (error, decodedToken) => {
       if (error) {
         console.log(error)
+        res.send(200).json('Pas de token')
       } else {
         console.log(decodedToken.id)
         next()

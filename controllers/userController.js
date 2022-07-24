@@ -12,11 +12,11 @@ exports.getAllUsers = (req, res) => {
 
 exports.getOneUser = (req, res) => {
   // Check if id passed in params is known
-  if (!d.isValid(req.params.id))
+  if (!ObjectId.isValid(req.params.id))
     return res.status(400).send('ID inconnue : ' + req.params.id)
-  User.findById(req.params.id, (err, docs) => {
-    if (!err) res.send(docs)
-    else console.log('ID inconnue : ' + err)
+  User.findById(req.params.id, (error, docs) => {
+    if (!error) res.send(docs)
+    else console.log('ID inconnue : ' + error)
   }).select('-password')
 }
 

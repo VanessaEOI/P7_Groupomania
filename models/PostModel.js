@@ -13,7 +13,6 @@ const postSchema = new mongoose.Schema(
     },
     picture: {
       type: String,
-      required: true,
     },
     likers: {
       type: [String],

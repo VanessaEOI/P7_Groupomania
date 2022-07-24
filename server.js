@@ -10,13 +10,28 @@ require('./config/db')
 
 const { checkUser, requireAuth } = require('./middleware/authMiddleware')
 
+const cors = require('cors')
+
 const app = express()
+
+const corsOptions = {
+  origin: process.env.CLIENT_URL,
+  credentials: true,
+  allowedHeaders: ['sessionId', 'Content-Type'],
+  exposedHeaders: ['sessionId'],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  preflightContinue: false,
+}
+app.use(cors(corsOptions))
 
 // read body
 app.use(express.json())
 
 // Multer img download
-app.use('/images', express.static(path.join(__dirname, '../images')))
+app.use(
+  '/posts',
+  express.static(path.join(__dirname, '../client/public/uploads/posts'))
+)
 
 // read url
 app.use(express.urlencoded({ extended: true }))

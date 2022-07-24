@@ -4,7 +4,7 @@ const { signUpErrors } = require('../utils/errorsUtils')
 
 const maxAge = 24 * 60 * 60 * 1000
 
-const createToken = (id) => {
+function createToken(id) {
   return jwt.sign({ id }, process.env.TOKEN_SECRET, {
     expiresIn: maxAge,
   })
@@ -15,8 +15,8 @@ exports.signUp = (req, res) => {
   user
     .save()
     .then(() => res.status(201).json({ message: 'Nouvel utilisateur créé' }))
-    .catch((err) => {
-      const errors = signUpErrors(err)
+    .catch((error) => {
+      const errors = signUpErrors(error)
       res.status(400).json({ errors })
     })
 }
