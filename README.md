@@ -13,8 +13,8 @@
 
     - Pour lancer le back du projet :
 
-    - Ouvrir le terminal et exécuter "npm install"
-    - Vous pouvez exécuter "npm update --save" pour mettre à jour les dépendances
-    - Et enfin éxécutez "npm start"
+        - Ouvrir le terminal et exécuter "npm install"
+        - Vous pouvez exécuter "npm update --save" pour mettre à jour les dépendances
+        - Et enfin éxécutez "npm start"
 
     - Pour lancer le front, faire la même chose après avoir éxécuté "cd client" dans une nouvelle fenêtre du terminal
