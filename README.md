@@ -1,4 +1,4 @@
-# P7 - Parcours Développeur Web
+# P7 - Parcours Développeur Web - WORK IN PROCESS
 
 ## Créez un réseau social d’entreprise : Groupomania
 
